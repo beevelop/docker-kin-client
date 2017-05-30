@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t watchmen .
+  - docker run --name kin -d -e API_HOSTNAME=kin.example.com --name kinclient kin-client
+  - echo "Container has been started... waiting a few seconds for initialization!"
+  - sleep 30
+  - docker exec kin bash -c "apt-get update && apt-get install curl -y --no-install-recommends && curl -f localhost:8080"
