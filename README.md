@@ -20,7 +20,7 @@ docker run -d -p 8080:8080 -e API_HOSTNAME=kin.example.com --name kinclient kin-
 ```
 
 ## Configuration
-- `API_HOSTNAME` (required): hostname of the (kin-server)[https://github.com/beevelop/docker-kin-server]
+- `API_HOSTNAME` (required): hostname of the [kin-server](https://github.com/beevelop/docker-kin-server)
 
 ----
 ### Pull from Docker Hub
