@@ -14,9 +14,18 @@
 This Docker image is an unofficial alternative to quickly get started with Kin (e.g. for development or to run your personal instances).
 
 ----
+## Quick Start
+```
+docker run -d -p 8080:8080 -e API_HOSTNAME=kin.example.com --name kinclient kin-client
+```
+
+## Configuration
+- `API_HOSTNAME` (required): hostname of the (kin-server)[https://github.com/beevelop/docker-kin-server]
+
+----
 ### Pull from Docker Hub
 ```
-docker pull beevelop/kin-client:latest
+docker pull beevelop/kin-client
 ```
 
 ### Or build from GitHub
@@ -24,14 +33,9 @@ docker pull beevelop/kin-client:latest
 docker build -t beevelop/kin-client github.com/beevelop/docker-java
 ```
 
-### Run image
-```
-docker run -it beevelop/kin-client bash
-```
-
 ### Or use as base image
 ```Dockerfile
-FROM beevelop/kin-client:latest
+FROM beevelop/kin-client
 ```
 
 ----
